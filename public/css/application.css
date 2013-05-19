@@ -1,0 +1,188 @@
+html {
+  background: url('../images/wavegrid.png');
+  font-family: sans-serif;
+  position: relative;
+}
+
+body {
+  padding: 0 0 90px;
+}
+
+.smallify {
+  font-size: .6em;
+}
+
+.smallify a {
+  text-decoration: underline;
+}
+
+header {
+  width: 100%;
+  background: black;
+  height: 80px;
+  margin: 0 0 40px;
+}
+
+header h1 a {
+  font-family: 'Special Elite', cursive;
+  color: white;
+  text-decoration: none;
+  font-size: 42px;
+  font-weight: normal;
+}
+
+header nav ul {
+  width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  height: 80px;
+  line-height: 120px;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 10px 0;
+  vertical-align: bottom;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+header nav ul li a:hover {
+  color: gray;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: gray;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  clear: both;
+  width: 720px;
+  margin: 0 auto;
+}
+
+.haiku p {
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  font-size: 32px;
+  color: gray;
+  line-height: 1.6em;
+}
+
+.login h2 {
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  font-size: 32px;
+  color: gray;
+  margin: 0 0 30px;
+}
+
+.haiku h2 {
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  color: gray;
+  font-size: 32px;
+  margin: 0 0 30px;
+}
+
+.login h3, .create h3 {
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  font-size: 28px;
+  color: red;
+  margin: 0 0 20px;
+}
+
+.haiku ul {
+  margin: 26px 0 0;
+  text-align: center;
+}
+
+.haiku ul li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+.haiku a {
+  text-decoration: none;
+  color: gray;
+  font-weight: normal;
+}
+
+.haiku a:hover {
+  text-decoration: underline;
+}
+
+.haiku_list {
+  margin: 0 0 50px;
+}
+
+.haiku_list p.votes {
+  font-size: .8em;
+  margin: 12px 0 0;
+}
+
+.haiku p.date {
+  font-size: .8em;
+  margin: 0 0 30px;
+}
+
+input {
+  border: 5px solid white;
+  -webkit-box-shadow:
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1);
+  -moz-box-shadow:
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1);
+  box-shadow:
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1);
+  padding: 15px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 0 10px 0;
+  width: 680px;
+}
+
+button {
+  background: gray;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-size: 1.2em;
+}
+
+button:hover {
+  background: black;
+  cursor: pointer;
+  box-shadow: -2px 2px 5px gray;
+}
+
+p#session_user {
+  text-align: center;
+  color: gray;
+  font-size: .9em;
+  margin: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

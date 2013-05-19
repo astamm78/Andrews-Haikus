@@ -1,0 +1,18 @@
+<div class="container login">
+
+  <h2>
+    Please Sign In<br>
+    <span class="smallify">or <a href="/signup">create</a> an account</span>
+  </h2>
+
+  <% if @errors %>
+    <h3><%= @errors %></h3>
+  <% end %>
+
+  <form name="sign_in" action="/verify" method="post">
+    <input class="textbox" type="text" name="email" placeholder="Email">
+    <input class="textbox" type="password" name="password" placeholder="Password">
+    <button type="submit" value="login">Submit</button>
+  </form>
+
+</div>

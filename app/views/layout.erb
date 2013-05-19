@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="/css/reset.css">
+
+  <link rel="stylesheet" href="/css/application.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title>Andrew's Haikus</title>
+
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><h1><a href="/">Andrew's Haikus</a></h1></li>
+        <li class="head_nav"><a href="/newest">Newest Haiku</a></li>
+        <li class="head_nav"><a href="/all">List All Haikus</a></li>
+        <li class="head_nav"><a href="/create">Create</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <%= yield %>
+
+  <% if current_user != nil %>
+    <p id="session_user">
+      You are logged in as <%= current_user.full_name %>,
+      <a href="/logout">Log Out</a>
+    </p>
+  <% end %>
+
+</body>
+</html>

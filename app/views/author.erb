@@ -1,0 +1,32 @@
+<div class="container haiku">
+
+  <% if @haikus.length > 0 %>
+    <h2>Haikus by <%= User.find(@author).full_name %></h2>
+
+    <% @haikus.reverse.each do |haiku| %>
+      <div class="haiku_list">
+        <p class="date"><%= haiku.created_at.strftime('%b %e, %Y') %></p>
+        <p><%= haiku.line_1 %></p>
+        <p><%= haiku.line_2 %></p>
+        <p><%= haiku.line_3 %></p>
+        <ul>
+          <li><a href="/haiku/<%= haiku.id %>">permalink</a></li>
+          <li><a href ="/vote/<%= haiku.id %>">vote</a></li>
+        </ul>
+
+        <% if haiku.votes == 1 %>
+          <p class="votes"><%= haiku.votes %> vote</p>
+        <% else %>
+          <p class="votes"><%= haiku.votes %> votes</p>
+        <% end %>
+
+      </div>
+    <% end %>
+  <% else %>
+    <p>
+      <%= User.find(current_user).full_name %> has no haikus yet.<br>
+      Why not <a href="/create">create</a> one?
+    </p>
+  <% end %>
+
+</div>

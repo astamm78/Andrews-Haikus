@@ -1,0 +1,18 @@
+<div class="container login signup">
+
+  <h2>
+    Create an Account
+  </h2>
+
+  <% if @errors %>
+    <h3><%= @errors %></h3>
+  <% end %>
+
+  <form name="sign_up" action="/create_account" method="post">
+    <input class="textbox" type="text" name="full_name" placeholder="Full Name">
+    <input class="textbox" type="text" name="email" placeholder="Email">
+    <input class="textbox" type="password" name="password" placeholder="Password">
+    <button type="submit" value="login">Create Account</button>
+  </form>
+
+</div>
