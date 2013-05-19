@@ -6,4 +6,6 @@ class Haiku < ActiveRecord::Base
   validates :line_2, :presence => true
   validates :line_3, :presence => true
 
+  self.per_page = 3
+
 end

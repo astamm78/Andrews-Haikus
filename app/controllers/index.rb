@@ -59,15 +59,16 @@ end
 
 get '/vote/:id' do
   Haiku.find(params[:id]).increment!(:votes)
-  erb :all
+  redirect to '/all'
 end
 
 get '/all' do
+  @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
   erb :all
 end
 
 get '/author/:id' do
-  @haikus = Haiku.find_all_by_user_id(params[:id])
+  @haikus = Haiku.paginate(:page => params[:page]).find_all_by_user_id(params[:id], :order => "created_at DESC")
   @author = params[:id]
   erb :author
 end

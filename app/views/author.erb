@@ -3,7 +3,7 @@
   <% if @haikus.length > 0 %>
     <h2>Haikus by <%= User.find(@author).full_name %></h2>
 
-    <% @haikus.reverse.each do |haiku| %>
+    <% @haikus.each do |haiku| %>
       <div class="haiku_list">
         <p class="date"><%= haiku.created_at.strftime('%b %e, %Y') %></p>
         <p><%= haiku.line_1 %></p>
@@ -28,5 +28,7 @@
       Why not <a href="/create">create</a> one?
     </p>
   <% end %>
+
+  <%= will_paginate @haikus %>
 
 </div>

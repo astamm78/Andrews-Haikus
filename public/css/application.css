@@ -175,9 +175,27 @@ p#session_user {
   margin: 40px;
 }
 
+.pagination {
+  width: 720px;
+  margin: 90px auto 0;
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+  color: gray;
+  font-size: 1.2em;
+}
 
+.pagination a, .pagination .disabled, .pagination .current {
+  padding: 0 20px;
+}
 
+.pagination .current {
+  font-weight: bolder;
+  text-decoration: underline;
+}
 
+.pagination .disabled {
+  color: #9b9b9b;
+}
 
 
 

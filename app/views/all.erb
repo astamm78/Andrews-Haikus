@@ -2,7 +2,7 @@
 
   <h2>All Haikus</h2>
 
-  <% Haiku.order(:votes).reverse.each do |haiku| %>
+  <% @haikus.each do |haiku| %>
     <div class="haiku_list">
       <p class="date">
         <%= haiku.created_at.strftime('%b %e, %Y') %>
@@ -24,5 +24,7 @@
 
     </div>
   <% end %>
+
+  <%= will_paginate @haikus %>
 
 </div>
