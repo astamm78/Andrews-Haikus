@@ -79,7 +79,11 @@ get '/newest' do
 end
 
 get '/create' do
-  erb :create
+  if current_user != nil
+    erb :create
+  else
+    redirect to '/'
+  end
 end
 
 post '/create_haiku' do
@@ -94,18 +98,3 @@ post '/create_haiku' do
     erb :create
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  padding: 0 0 90px;
+  padding: 120px 0 90px;
 }
 
 .smallify {
@@ -21,13 +21,15 @@ header {
   background: black;
   height: 80px;
   margin: 0 0 40px;
+  position: fixed;
+  top: 0;
 }
 
 header h1 a {
   font-family: 'Special Elite', cursive;
   color: white;
   text-decoration: none;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: normal;
 }
 
@@ -69,6 +71,7 @@ a:hover {
   clear: both;
   width: 720px;
   margin: 0 auto;
+  /*padding: 120px 0 0;*/
 }
 
 .haiku p {
