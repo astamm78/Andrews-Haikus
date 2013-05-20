@@ -23,6 +23,8 @@ header {
   margin: 0 0 40px;
   position: fixed;
   top: 0;
+  -webkit-box-shadow: 0 0 15px gray;
+  box-shadow: 0 0 15px gray;
 }
 
 header h1 a {
@@ -131,8 +133,8 @@ a:hover {
 }
 
 .haiku_list p.votes {
-  font-size: .8em;
-  margin: 12px 0 0;
+  font-size: 1em;
+  margin: 24px 0 0;
 }
 
 .haiku p.date {
