@@ -11,7 +11,7 @@ post '/verify' do
   @login_auth = User.authenticate(params[:email], params[:password])
   if @login_auth == true
     session[:user_id] = User.find_by_email(params[:email]).id
-    redirect to "/author/#{current_user.id}"
+    redirect to "/create"
   else
     @errors = "Please log in with a valid email and password"
     erb :signin
