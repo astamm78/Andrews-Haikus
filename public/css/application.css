@@ -54,7 +54,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: gray;
+  text-decoration: underline;
 }
 
 a {

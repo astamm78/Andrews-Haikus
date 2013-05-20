@@ -1,13 +1,10 @@
-# Add create account link     [X]
-# Create New Account Page     [X]
-# Create post new Haiku page  [ ]
-
 get '/' do
-  if session[:user_id] == nil
-    erb :index
-  else
-    redirect to '/rand'
-  end
+  @haiku = Haiku.find((1..Haiku.count).to_a.sample)
+  erb :rand
+end
+
+get '/signin' do
+  erb :signin
 end
 
 post '/verify' do
@@ -17,18 +14,18 @@ post '/verify' do
     redirect to "/author/#{current_user.id}"
   else
     @errors = "Please log in with a valid email and password"
-    erb :index
+    erb :signin
   end
-end
-
-get '/rand' do
-  @haiku = Haiku.find((1..Haiku.count).to_a.sample)
-  erb :rand
 end
 
 get '/logout' do
   session[:user_id] = nil
   redirect to '/'
+end
+
+get '/rand' do
+  @haiku = Haiku.find((1..Haiku.count).to_a.sample)
+  erb :rand
 end
 
 get '/signup' do
@@ -52,6 +49,11 @@ post '/create_account' do
   end
 end
 
+get '/all' do
+  @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
+  erb :all
+end
+
 get '/haiku/:id' do
   @haiku = Haiku.find(params[:id])
   erb :rand
@@ -60,11 +62,6 @@ end
 get '/vote/:id' do
   Haiku.find(params[:id]).increment!(:votes)
   redirect to '/all'
-end
-
-get '/all' do
-  @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
-  erb :all
 end
 
 get '/author/:id' do
@@ -79,10 +76,10 @@ get '/newest' do
 end
 
 get '/create' do
-  if current_user != nil
-    erb :create
+  if current_user == nil
+    redirect '/signin'
   else
-    redirect to '/'
+    erb :create
   end
 end
 
