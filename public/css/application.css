@@ -18,7 +18,7 @@ body {
 
 header {
   width: 100%;
-  background: black;
+  background: gray;
   height: 80px;
   margin: 0 0 40px;
   position: fixed;
