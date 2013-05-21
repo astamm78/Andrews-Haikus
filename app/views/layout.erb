@@ -23,7 +23,9 @@
         <li><h1><a href="/">Andrew's Haikus</a></h1></li>
         <li class="head_nav"><a href="/newest">Newest Haiku</a></li>
         <li class="head_nav"><a href="/all">List All Haikus</a></li>
+        <% if current_user %>
         <li class="head_nav"><a href="/create">Create New Haiku</a></li>
+        <% end %>
       </ul>
     </nav>
   </header>
