@@ -142,6 +142,10 @@ a:hover {
   margin: 0 0 30px;
 }
 
+form {
+  padding: 0 90px;
+}
+
 input {
   border: 5px solid white;
   -webkit-box-shadow:
