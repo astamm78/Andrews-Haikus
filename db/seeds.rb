@@ -2,7 +2,7 @@ require 'csv'
 
 User.create(  :full_name  => "Andrew Stamm",
               :email      => "andrewstamm@me.com",
-              :password   => "password")
+              :password   => "guernica")
 
 CSV.read('db/haiku.csv').each do |haiku|
   Haiku.create( :line_1 => haiku[0],
