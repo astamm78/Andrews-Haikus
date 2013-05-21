@@ -3,7 +3,7 @@ get '/' do
   erb :rand
 end
 
-get '/signin' do
+get '/narwhal' do
   erb :signin
 end
 
@@ -28,7 +28,7 @@ get '/rand' do
   erb :rand
 end
 
-get '/signup' do
+get '/platypus' do
   if @login_auth == true
     redirect to '/rand'
   else

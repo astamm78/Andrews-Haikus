@@ -18,13 +18,13 @@ body {
 
 header {
   width: 100%;
-  background: gray;
+  background: #669999;
   height: 80px;
   margin: 0 0 40px;
   position: fixed;
   top: 0;
-  -webkit-box-shadow: 0 0 15px gray;
-  box-shadow: 0 0 15px gray;
+  -webkit-box-shadow: 0 0 15px #669999;
+  box-shadow: 0 0 15px #669999;
 }
 
 header h1 a {
@@ -62,7 +62,7 @@ header nav ul li a:hover {
 a {
   text-decoration: none;
   font-weight: bold;
-  color: gray;
+  color: #669999;
 }
 
 a:hover {
@@ -73,14 +73,13 @@ a:hover {
   clear: both;
   width: 900px;
   margin: 0 auto;
-  /*padding: 120px 0 0;*/
 }
 
 .haiku p {
   font-family: 'Special Elite', cursive;
   text-align: center;
   font-size: 48px;
-  color: gray;
+  color: #669999;
   line-height: 1.6em;
 }
 
@@ -88,14 +87,14 @@ a:hover {
   font-family: 'Special Elite', cursive;
   text-align: center;
   font-size: 32px;
-  color: gray;
+  color: #669999;
   margin: 0 0 30px;
 }
 
 .haiku h2 {
   font-family: 'Special Elite', cursive;
   text-align: center;
-  color: gray;
+  color: #669999;
   font-size: 32px;
   margin: 0 0 30px;
 }
@@ -120,7 +119,7 @@ a:hover {
 
 .haiku a {
   text-decoration: none;
-  color: gray;
+  color: #669999;
   font-weight: normal;
 }
 
@@ -164,7 +163,7 @@ input {
 }
 
 button {
-  background: gray;
+  background: #669999;
   border: none;
   padding: 12px;
   color: white;
@@ -174,27 +173,37 @@ button {
 button:hover {
   background: black;
   cursor: pointer;
-  box-shadow: -2px 2px 5px gray;
+  box-shadow: -2px 2px 5px #669999;
 }
 
 p#session_user {
   text-align: center;
-  color: gray;
+  color: #669999;
   font-size: .9em;
   margin: 40px;
 }
 
-.pagination {
-  width: 720px;
+#pager {
+  width: 100%;
+  background: #669999;
   margin: 90px auto 0;
+  padding: 12px 0;
+  position: fixed;
+  bottom: 0;
+  -webkit-box-shadow: 0 0 15px #669999;
+  box-shadow: 0 0 15px #669999;
+}
+
+.pagination {
   text-align: center;
   font-family: 'Special Elite', cursive;
-  color: gray;
+  color: #white;
   font-size: 1.2em;
 }
 
 .pagination a, .pagination .disabled, .pagination .current {
   padding: 0 20px;
+  color: white;
 }
 
 .pagination .current {
@@ -203,10 +212,8 @@ p#session_user {
 }
 
 .pagination .disabled {
-  color: #9b9b9b;
+  color: #444;
 }
-
-
 
 
 
