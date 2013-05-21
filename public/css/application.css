@@ -71,7 +71,7 @@ a:hover {
 
 .container {
   clear: both;
-  width: 720px;
+  width: 900px;
   margin: 0 auto;
   /*padding: 120px 0 0;*/
 }
@@ -79,7 +79,7 @@ a:hover {
 .haiku p {
   font-family: 'Special Elite', cursive;
   text-align: center;
-  font-size: 32px;
+  font-size: 48px;
   color: gray;
   line-height: 1.6em;
 }
