@@ -24,7 +24,7 @@ header {
   position: fixed;
   top: 0;
   -webkit-box-shadow: 0 0 15px #669999;
-  box-shadow: 0 0 15px #669999;
+  box-shadow: 0 0 50px #669999;
 }
 
 header h1 a {
