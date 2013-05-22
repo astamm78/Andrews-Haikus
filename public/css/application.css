@@ -184,6 +184,7 @@ p#session_user {
 }
 
 #pager {
+  height: 40px;
   width: 100%;
   background: #669999;
   margin: 90px auto 0;
@@ -195,6 +196,7 @@ p#session_user {
 }
 
 .pagination {
+  margin: 10px 0 0;
   text-align: center;
   font-family: 'Special Elite', cursive;
   color: #white;

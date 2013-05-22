@@ -39,5 +39,11 @@
     </p>
   <% end %>
 
+  <div id="pager">
+    <% if @haikus %>
+    <%= will_paginate @haikus %>
+    <% end %>
+  </div>
+
 </body>
 </html>
