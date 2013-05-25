@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  window.history.pushState("object or string", "Title", "/");
+
   // Permalink Popup
   $('.container').on("click", "a.perm", function(event) {
     event.preventDefault();
