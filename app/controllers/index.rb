@@ -64,12 +64,6 @@ get '/vote/:id' do
   redirect to '/all'
 end
 
-get '/author/:id' do
-  @haikus = Haiku.paginate(:page => params[:page]).find_all_by_user_id(params[:id], :order => "created_at DESC")
-  @author = params[:id]
-  erb :author
-end
-
 get '/newest' do
   @haiku = Haiku.order(:created_at).reverse.first
   erb :rand

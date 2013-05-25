@@ -1,15 +1,13 @@
 <div class="container haiku">
 
   <p class="date">
-    <%= @haiku.created_at.strftime('%b %e, %Y') %>
-    , by <a href="/author/<%= @haiku.user_id %>"><%= User.find(@haiku.user_id).full_name %></a>
-  </p>
+    <%= @haiku.created_at.strftime('%b %e, %Y') %> by <%= User.find(@haiku.user_id).full_name %></p>
   <p><%= @haiku.line_1 %></p>
   <p><%= @haiku.line_2 %></p>
   <p><%= @haiku.line_3 %></p>
   <ul>
-    <li><a href="/haiku/<%= @haiku.id %>">permalink</a></li>
-    <li><a href ="/vote/<%= @haiku.id %>">like</a></li>
+    <li><a href="/haiku/<%= @haiku.id %>" target="_blank">permalink</a></li>
+    <li><a class="like" href ="/vote/<%= @haiku.id %>">like</a></li>
   </ul>
 
 </div>
