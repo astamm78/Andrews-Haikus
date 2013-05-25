@@ -1,36 +1,33 @@
 <h2>All Haikus</h2>
 
-<div class="haiku">
+<% @haikus.each do |haiku| %>
+  <div class="haiku_list">
 
-  <% @haikus.each do |haiku| %>
-    <div class="haiku_list">
+    <div class="haiku haiku_list">
 
-      <div class="haiku">
+      <p class="date"><%= haiku.created_at.strftime('%b %e, %Y') %> by <%= User.find(haiku.user_id).full_name %></p>
+      <p><%= haiku.line_1 %></p>
+      <p><%= haiku.line_2 %></p>
+      <p><%= haiku.line_3 %></p>
+      <ul>
+        <li><a class="perm" href="/haiku/<%= haiku.id %>" target="_blank">permalink</a></li>
+        <li><a class="like" href ="/vote/<%= haiku.id %>">like</a></li>
+      </ul>
 
-        <p class="date"><%= haiku.created_at.strftime('%b %e, %Y') %> by <%= User.find(haiku.user_id).full_name %></p>
-        <p><%= haiku.line_1 %></p>
-        <p><%= haiku.line_2 %></p>
-        <p><%= haiku.line_3 %></p>
-        <ul>
-          <li><a class="perm" href="/haiku/<%= haiku.id %>" target="_blank">permalink</a></li>
-          <li><a class="like" href ="/vote/<%= haiku.id %>">like</a></li>
-        </ul>
-
-        <div id="permalink" class="hidden">
-          <a id="close" href="#">Close</a>
-          <input type="text" value ="http://andrewshaikus.com/haiku/<%= haiku.id %>"></input>
-        </div>'
-
-      </div>
-
-      <% if haiku.votes == 1 %>
-        <p class="votes"><%= haiku.votes %> like</p>
-      <% else %>
-        <p class="votes"><%= haiku.votes %> likes</p>
-      <% end %>
+      <div id="permalink" class="hidden">
+        <a id="close" href="#">Close</a>
+        <input type="text" value ="http://andrewshaikus.com/haiku/<%= haiku.id %>"></input>
+      </div>'
 
     </div>
-  <% end %>
+
+    <% if haiku.votes == 1 %>
+      <p class="votes"><%= haiku.votes %> like</p>
+    <% else %>
+      <p class="votes"><%= haiku.votes %> likes</p>
+    <% end %>
+
+  </div>
+<% end %>
 
 
-</div>
