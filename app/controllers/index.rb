@@ -50,8 +50,8 @@ post '/create_account' do
 end
 
 get '/all' do
-  haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
-  erb :all, :locals => {:haikus => haikus}
+  @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
+  erb :all, :locals => {:haikus => @haikus}
 end
 
 get '/haiku/:id' do
