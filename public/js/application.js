@@ -2,6 +2,10 @@ $(document).ready(function() {
 
   window.history.pushState("object or string", "Title", "/");
 
+  // Pagination Fix
+  $('.next_page').text('Next');
+  $('.previous_page').text('Previous');
+
   // Permalink Popup
   $('.container').on("click", "a.perm", function(event) {
     event.preventDefault();
