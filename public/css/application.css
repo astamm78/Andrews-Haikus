@@ -206,8 +206,10 @@ p#session_user {
 .pagination a, .pagination .disabled, .pagination .current {
   padding: 0 20px;
   color: white;
+  font-weight: normal;
 }
 
 .pagination .current, .pagination .disabled {
+  font-weight: normal;
   color: #003333;
 }
