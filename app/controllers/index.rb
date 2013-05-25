@@ -51,7 +51,7 @@ end
 
 get '/all' do
   @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
-  erb :all, :locals => {:haikus => @haikus}
+  erb :all
 end
 
 get '/haiku/:id' do
