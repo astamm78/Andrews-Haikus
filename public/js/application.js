@@ -1,9 +1,5 @@
 $(document).ready(function() {
 
-  // Pagination Fix
-  $('.next_page').text('Next');
-  $('.previous_page').text('Previous');
-
   // Home Page Link AJAX
   $("header nav ul").on("click", "h1 a", function(event) {
     event.preventDefault();
@@ -33,6 +29,9 @@ $(document).ready(function() {
       var page = $(results).filter('#pager').html();
       $('.container').html(all);
       $('#pager').html(page);
+      // Pagination Fix
+      $('.next_page').text('Next');
+      $('.previous_page').text('Previous');
     });
   });
 
@@ -45,6 +44,10 @@ $(document).ready(function() {
       var page = $(results).filter('#pager').html();
       $('.container').html(all);
       $('#pager').html(page);
+      // Pagination Fix
+      $('.next_page').text('Next');
+      $('.previous_page').text('Previous');
+      // Scroll to top
       $('html, body').animate({ scrollTop: 0 }, 0);
     });
   });
