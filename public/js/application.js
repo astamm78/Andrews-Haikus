@@ -61,6 +61,9 @@ $(document).ready(function() {
       var page = $(results).filter('#pager').html();
       $('.container').html(like);
       $('#pager').html(page);
+      // Pagination Fix
+      $('.next_page').text('Next');
+      $('.previous_page').text('Previous');
     });
   });
 
