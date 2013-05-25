@@ -56,7 +56,7 @@ end
 
 get '/haiku/:id' do
   @haiku = Haiku.find(params[:id])
-  erb :rand
+  erb :haiku
 end
 
 get '/vote/:id' do
