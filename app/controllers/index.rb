@@ -1,6 +1,6 @@
 get '/' do
-  @haiku = Haiku.find((1..Haiku.count).to_a.sample)
-  erb :rand
+  haiku = Haiku.find((1..Haiku.count).to_a.sample)
+  erb :haiku, :locals => {:haiku => haiku}
 end
 
 get '/narwhal' do
@@ -50,8 +50,8 @@ post '/create_account' do
 end
 
 get '/all' do
-  @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
-  erb :all
+  haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
+  erb :all, :locals => {:haikus => haikus}
 end
 
 get '/haiku/:id' do

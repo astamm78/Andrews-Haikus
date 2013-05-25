@@ -30,7 +30,9 @@
     </nav>
   </header>
 
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
   <% if current_user != nil %>
     <p id="session_user">
