@@ -1,8 +1,3 @@
-get '/rand' do
-  @haiku = Haiku.find((1..Haiku.count).to_a.sample)
-  erb :rand
-end
-
 get '/all' do
   @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
   erb :all
@@ -16,7 +11,7 @@ end
 get '/vote/:id' do
   Haiku.find(params[:id]).increment!(:votes)
   @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
-  redirect '/all'
+  erb :all
 end
 
 get '/newest' do
