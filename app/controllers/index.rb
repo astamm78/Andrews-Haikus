@@ -66,7 +66,7 @@ end
 
 get '/newest' do
   @haiku = Haiku.order(:created_at).reverse.first
-  erb :rand
+  erb :haiku
 end
 
 get '/create' do
