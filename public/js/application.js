@@ -45,6 +45,7 @@ $(document).ready(function() {
       var page = $(results).filter('#pager').html();
       $('.container').html(all);
       $('#pager').html(page);
+      $('html, body').animate({ scrollTop: 0 }, 0);
     });
   });
 
@@ -61,21 +62,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
