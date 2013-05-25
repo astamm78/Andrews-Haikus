@@ -213,3 +213,36 @@ p#session_user {
   font-weight: normal;
   color: #003333;
 }
+
+#permalink {
+  width: 720px;
+  background: gray;
+  padding: 36px 30px 26px;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  margin-left: -370px;
+  box-shadow: -2px 2px 5px #669999;
+  border-radius: 8px;
+}
+
+#permalink a {
+  color: white;
+  position: relative;
+  bottom: 12px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+

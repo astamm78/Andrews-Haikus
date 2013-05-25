@@ -1,5 +1,18 @@
 $(document).ready(function() {
 
+  // Permalink Popup
+  $('.container').on("click", "a.perm", function(event) {
+    event.preventDefault();
+    $(this).closest('.haiku').find("#permalink").removeClass("hidden");
+  });
+
+  // Close Permalink Popup
+  $(".container").on("click", "a#close", function(event) {
+    event.preventDefault();
+    $(this).closest("#permalink").addClass("hidden");
+  });
+
+
   // Home Page Link AJAX
   $("header nav ul").on("click", "h1 a", function(event) {
     event.preventDefault();
