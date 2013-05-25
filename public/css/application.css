@@ -131,10 +131,9 @@ h2 {
   margin: 0 0 50px;
 }
 
-p.votes {
+.votes {
   font-family: 'Special Elite', cursive;
   text-align: center;
-  font-size: 48px;
   color: #669999;
   line-height: 1.6em;
   font-size: 1em;
@@ -143,7 +142,7 @@ p.votes {
   top: -50px;
 }
 
-.haiku p.date {
+.haiku .date {
   font-size: .8em;
   margin: 0 0 30px;
 }
