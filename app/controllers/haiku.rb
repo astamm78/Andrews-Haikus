@@ -15,7 +15,8 @@ end
 
 get '/vote/:id' do
   Haiku.find(params[:id]).increment!(:votes)
-  redirect to '/all'
+  @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
+  erb :all
 end
 
 get '/newest' do
