@@ -144,7 +144,7 @@ h2 {
   color: #669999;
   font-size: 18px;
   line-height: 1.6em;
-  margin: 18px 0 0;
+  margin: 18px 0 24px;
   text-align: center;
 }
 
@@ -242,6 +242,26 @@ p#session_user {
   color: white;
   position: relative;
   bottom: 12px;
+}
+
+#liked_by {
+  width: 720px;
+  background: white;
+  padding: 36px 30px 26px;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  margin-left: -370px;
+  box-shadow: -2px 2px 5px #669999;
+  border-radius: 8px;
+}
+
+#liked_by a {
+  color: gray;
+}
+
+#liked_by p {
+  font-size: 1.6em;
 }
 
 .hidden {

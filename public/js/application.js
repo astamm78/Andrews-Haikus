@@ -13,11 +13,22 @@ $(document).ready(function() {
   });
 
   // Close Permalink Popup
-  $(".container").on("click", "a#close", function(event) {
+  $(".container").on("click", "a.close", function(event) {
     event.preventDefault();
     $(this).closest("#permalink").addClass("hidden");
   });
 
+  // Liked By Popup
+  $(".container").on("click", "a.liked", function(event) {
+    event.preventDefault();
+    $(this).closest(".haiku").find("#liked_by").removeClass("hidden");
+  });
+
+  // Close Liked By Popup
+  $(".container").on("click", "a.close", function(event) {
+    event.preventDefault();
+    $(this).closest("#liked_by").addClass("hidden");
+  });
 
   // Home Page Link AJAX
   $("header nav ul").on("click", "h1 a", function(event) {

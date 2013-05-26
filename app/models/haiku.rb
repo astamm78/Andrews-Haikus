@@ -10,4 +10,8 @@ class Haiku < ActiveRecord::Base
 
   self.per_page = 3
 
+  def self.by_likes
+    Haiku.all.sort!{ |a,b| a.likes.count <=> b.likes.count }.reverse!
+  end
+
 end
