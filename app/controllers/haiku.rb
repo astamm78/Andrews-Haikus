@@ -20,9 +20,3 @@ get '/newest' do
   @haiku = Haiku.order(:created_at).reverse.first
   erb :haiku
 end
-
-
-
-Haiku.all(:select => "Haiku.*, COUNT(#{Like.haiku_id}.id) number_of_likes",
-         :joins => :likes,
-         :order => "number_of_likes")
