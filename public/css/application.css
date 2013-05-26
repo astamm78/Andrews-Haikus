@@ -91,6 +91,10 @@ a:hover {
   margin: 0 0 30px;
 }
 
+.login h2 a {
+  text-decoration: underline;
+}
+
 h2 {
   font-family: 'Special Elite', cursive;
   text-align: center;
@@ -99,7 +103,7 @@ h2 {
   margin: 0 0 30px;
 }
 
-.login h3, .create h3 {
+.login h3, .create h3, h4 {
   font-family: 'Special Elite', cursive;
   text-align: center;
   font-size: 28px;
