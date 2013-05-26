@@ -1,5 +1,5 @@
 get '/all' do
-  @haikus = Haiku.paginate(:page => params[:page])
+  @haikus = Haiku.paginate(:page => params[:page]).order('created_at DESC')
   @title ="All Haikus"
   erb :all
 end
