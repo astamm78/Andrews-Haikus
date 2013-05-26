@@ -10,26 +10,25 @@ class User < ActiveRecord::Base
   validates :password, :presence => true
   before_save :encrypt
 
+  def password
+    @password ||= Password.new(password_hash)
+  end
+
+  def password=(pass)
+    @password = Password.create(pass)
+    self.password_hash = @password
+  end
+
+  def self.create(params={})
+    @user = User.new(:email => params[:email], :name => params[:name])
+    @user.password = params[:password]
+    @user.save!
+    @user
+  end
+
   def self.authenticate(email, password)
     user = User.find_by_email(email)
-    if user && Password.new(user.password) == password
-      true
-    else
-      false
-    end
-  end
-
-  def encrypt
-    to_hash = self.password
-    self.password = BCrypt::Password.create(to_hash)
-  end
-
-  def get_stats
-    stats_array = []
-    self.rounds.each do |round|
-      stats_array << round.results
-    end
-    stats_array
+    (user && user.password == password) ? true : false
   end
 
 end
