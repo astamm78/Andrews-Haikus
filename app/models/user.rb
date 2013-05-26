@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   def self.create(params={})
     @user = User.new(:email => params[:email], :full_name => params[:full_name])
     @user.password = params[:password]
-    @user.save!
+    @user.save
     @user
   end
 
