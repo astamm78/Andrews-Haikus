@@ -32,7 +32,8 @@ post '/create_account' do
                             :password   => params[:password])
   if @new_user.save
     session[:user_id] = @new_user.id
-    redirect to "/author/#{@new_user.id}"
+    # redirect to "/author/#{@new_user.id}"
+    redirect "/"
   else
     @errors = "Full Name, a valid email and a password<br>of at least 5 characters are required"
     erb :signup
