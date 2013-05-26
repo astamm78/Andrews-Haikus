@@ -71,20 +71,4 @@ $(document).ready(function() {
     });
   });
 
-  // // Like Links AJAX
-  // $('.container').on("click", "a.like", function(event) {
-  //   event.preventDefault();
-  //   var url = $(this).attr("href");
-  //   $.get(url, function(results) {
-  //     var like = $(results).filter('.container').html();
-  //     var page = $(results).filter('#pager').html();
-  //     $('.container').html(like);
-  //     $('#pager').html(page);
-  //     // Pagination Fix
-  //     $('.next_page').text('Next');
-  //     $('.previous_page').text('Previous');
-  //     $('html, body').animate({ scrollTop: 0 }, 0);
-  //   });
-  // });
-
 });
