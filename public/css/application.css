@@ -75,7 +75,11 @@ a:hover {
   margin: 0 auto;
 }
 
-.haiku p {
+.green {
+  color: #669999;
+}
+
+.haiku p, p.empty {
   font-family: 'Special Elite', cursive;
   text-align: center;
   font-size: 48px;
@@ -132,18 +136,16 @@ h2 {
 }
 
 .haiku_list {
-  margin: 0 0 50px;
+  margin: 0 0 100px;
 }
 
-.votes {
+.haiku p.likes {
   font-family: 'Special Elite', cursive;
-  text-align: center;
   color: #669999;
+  font-size: 18px;
   line-height: 1.6em;
-  font-size: 1em;
-  margin: 24px 0 0;
-  position: relative;
-  top: -50px;
+  margin: 18px 0 0;
+  text-align: center;
 }
 
 .haiku .date {

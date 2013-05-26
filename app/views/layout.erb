@@ -41,8 +41,7 @@
 
   <% if current_user != nil %>
     <p id="session_user">
-      You are logged in as <%= current_user.full_name %>,
-      <a href="/logout">Log Out</a>
+      You are logged in as <a href="/user/<%= current_user.id %>"><%= current_user.full_name %></a>, <a href="/logout">Log Out</a>
     </p>
   <% end %>
 
