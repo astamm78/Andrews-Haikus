@@ -21,13 +21,13 @@
   </ul>
 
   <div id="permalink" class="hidden">
-    <a class="close_perm" href="#">Close</a>
+    <a class="close" href="#">Close</a>
     <input type="text" value ="http://andrewshaikus.com/haiku/<%= @haiku.id %>"></input>
   </div>
 
   <% if @haiku.likes.count != 0 %>
     <div id="liked_by" class="hidden">
-      <a class="close_like" href="#">Close</a>
+      <a class="close" href="#">Close</a>
       <% likes = [] %>
       <% @haiku.likes.each do |like| %>
         <% likes << User.find(like.user_id).full_name %>
@@ -35,6 +35,5 @@
       <p><%= likes.join(", ") %></p>
     </div>
   <% end %>
-
 
 </div>
