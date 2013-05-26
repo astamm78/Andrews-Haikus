@@ -1,5 +1,5 @@
 get '/all' do
-  @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
+  @haikus = Haiku.paginate(:page => params[:page])
   erb :all
 end
 
@@ -10,7 +10,7 @@ end
 
 get '/vote/:id' do
   Haiku.find(params[:id]).increment!(:votes)
-  @haikus = Haiku.paginate(:page => params[:page]).find(:all, :order => "votes DESC")
+  @haikus = Haiku.paginate(:page => params[:page])
   erb :all
 end
 
