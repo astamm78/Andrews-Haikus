@@ -40,7 +40,7 @@ post '/create_account' do
 end
 
 get '/user/:id' do
-  @haikus = User.find(params[:id]).haikus.paginate(:page => params[:page])
+  @haikus = User.find(params[:id]).haikus.paginate(:page => params[:page]).order('created_at DESC')
   @title = "Haikus liked by #{User.find(params[:id]).full_name}"
   erb :all
 end
