@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :format => {:with =>  /\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3}/},
             :uniqueness => true
   validates :password, :presence => true
-  before_save :encrypt
 
   def password
     @password ||= Password.new(password_hash)
@@ -20,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def self.create(params={})
-    @user = User.new(:email => params[:email], :name => params[:name])
+    @user = User.new(:email => params[:email], :full_name => params[:full_name])
     @user.password = params[:password]
     @user.save!
     @user
