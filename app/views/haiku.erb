@@ -1,6 +1,6 @@
 <div class="haiku">
 
-  <p class="date"><%= @haiku.created_at.strftime('%b %e, %Y') %> by <%= User.find(@haiku.user_id).full_name %></p>
+  <p class="date"><%= @haiku.created_at.strftime('%b %e, %Y') %> by <%= @haiku.author.full_name %></p>
   <p><%= @haiku.line_1 %></p>
   <p><%= @haiku.line_2 %></p>
   <p><%= @haiku.line_3 %></p>

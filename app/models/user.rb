@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_many :haikus
+  has_many :likes
+  has_many :haikus, :through => :likes
 
   include BCrypt
 
