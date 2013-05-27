@@ -5,31 +5,19 @@ $(document).ready(function() {
   paginationFix();
 
   // Permalink Popup
-  $('.container').on("click", "a.perm", function(event) {
-    event.preventDefault();
-    $(this).closest('.haiku').find("#permalink").removeClass("hidden");
-  });
+  openPopup('.container', 'a.perm', '.haiku', '#permalink');
 
   // Close Permalink Popup
-  $(".container").on("click", "a.close", function(event) {
-    event.preventDefault();
-    $(this).closest("#permalink").addClass("hidden");
-  });
+  closePopup('.container', 'a.close', '#permalink');
 
   // Liked By Popup
-  $(".container").on("click", "a.liked", function(event) {
-    event.preventDefault();
-    $(this).closest(".haiku").find("#liked_by").removeClass("hidden");
-  });
+  openPopup('.container', 'a.liked', '.haiku', '#liked_by');
 
   // Close Liked By Popup
-  $(".container").on("click", "a.close", function(event) {
-    event.preventDefault();
-    $(this).closest("#liked_by").addClass("hidden");
-  });
+  closePopup('.container', 'a.close', '#liked_by');
 
   // Home Page Link AJAX
-  ajaxer("header nav ul", "h1 a");
+  ajaxer("header nav", "h1 a");
 
   // Newest Haiku Link AJAX
   ajaxer("header nav ul", "a#newest");
@@ -41,10 +29,24 @@ $(document).ready(function() {
   ajaxer('#pager', 'a');
 
   // Sign In Link AJAX
-  ajaxer("header nav ul", "a#sign_in");
+  ajaxer("header nav ul", "a.sign_in");
+  ajaxer(".container", "a.sign_in");
 
 });
 
+function openPopup(watched, link, parent, unhide) {
+  $(watched).on("click", link, function(event) {
+    event.preventDefault();
+    $(this).closest(parent).find(unhide).removeClass("hidden");
+  });
+}
+
+function closePopup(watched, link, unhide) {
+  $(watched).on("click", link, function(event) {
+    event.preventDefault();
+    $(this).closest(unhide).addClass("hidden");
+  });
+}
 
 function ajaxer(watched, link) {
   $(watched).on("click", link, function(event) {
@@ -57,12 +59,10 @@ function ajaxer(watched, link) {
 }
 
 function scroller() {
-  // Scroll to top
   $('html, body').animate({ scrollTop: 0 }, 0);
 }
 
 function paginationFix() {
-  // Pagination Fix
   $('.next_page').text('Next');
   $('.previous_page').text('Previous');
 }
