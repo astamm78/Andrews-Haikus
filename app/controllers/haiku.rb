@@ -1,9 +1,3 @@
-# get '/all' do
-#   @haikus = Haiku.paginate(:page => params[:page]).order('created_at DESC')
-#   @title ="All Haikus"
-#   erb :all
-# end
-
 get '/all' do
   @haikus = Haiku.joins("LEFT OUTER JOIN likes ON haikus.id = likes.haiku_id").group("haikus.id").order("likes.count DESC").paginate(:page => params[:page])
   @title ="Most Popular Haikus"
