@@ -82,4 +82,31 @@ $(document).ready(function() {
     });
   });
 
+  // Sign In Link AJAX
+  $("header nav ul").on("click", "a#sign_in", function(event) {
+    event.preventDefault();
+    var url = $(this).attr("href");
+    $.get(url, function(results) {
+      var all = $(results).filter('.container').html();
+      var page = $(results).filter('#pager').html();
+      $('.container').html(all);
+      $('#pager').html(page);
+    });
+  });
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
