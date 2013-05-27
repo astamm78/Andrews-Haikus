@@ -4,6 +4,12 @@ get '/all' do
   erb :all
 end
 
+get '/popular' do
+  @haikus = Haiku.joins("JOIN likes ON haikus.id = likes.haiku_id").group("haikus.id").order("likes.count DESC").paginate(:page => params[:page])
+  @title ="Most Popular Haikus"
+  erb :all
+end
+
 get '/haiku/:id' do
   @haiku = Haiku.find(params[:id])
   erb :haiku
