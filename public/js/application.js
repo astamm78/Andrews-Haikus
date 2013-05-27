@@ -2,9 +2,7 @@ $(document).ready(function() {
 
   window.history.pushState("object or string", "Title", "/");
 
-  // Pagination Fix
-  $('.next_page').text('Next');
-  $('.previous_page').text('Previous');
+  paginationFix();
 
   // Permalink Popup
   $('.container').on("click", "a.perm", function(event) {
@@ -31,82 +29,49 @@ $(document).ready(function() {
   });
 
   // Home Page Link AJAX
-  $("header nav ul").on("click", "h1 a", function(event) {
-    event.preventDefault();
-    $.get("/", function(results) {
-      var home = $(results).filter('.container').html();
-      $('.container').html(home);
-      $('#pager').html('');
-    });
-  });
+  ajaxer("header nav ul", "h1 a");
 
-  // Newst Haiku Link AJAX
-  $("header nav ul").on("click", "a#newest", function(event) {
-    event.preventDefault();
-    var url = $("a#newest").attr("href");
-    $.get(url, function(results) {
-      var new_haiku = $(results).filter('.container').html();
-      $('.container').html(new_haiku);
-      $('#pager').html('');
-    });
-  });
+  // Newest Haiku Link AJAX
+  ajaxer("header nav ul", "a#newest");
 
   // List All Link AJAX
-  $("header nav ul").on("click", "a#list_all", function(event) {
-    event.preventDefault();
-    $.get("/all", function(results) {
-      var all = $(results).filter('.container').html();
-      var page = $(results).filter('#pager').html();
-      $('.container').html(all);
-      $('#pager').html(page);
-      // Pagination Fix
-      $('.next_page').text('Next');
-      $('.previous_page').text('Previous');
-    });
-  });
+  ajaxer("header nav ul", "a#list_all");
 
   // Pagination Links AJAX
-  $('#pager').on("click", "a", function(event) {
-    event.preventDefault();
-    var url = $(this).attr("href");
-    $.get(url, function(results) {
-      var all = $(results).filter('.container').html();
-      var page = $(results).filter('#pager').html();
-      $('.container').html(all);
-      $('#pager').html(page);
-      // Pagination Fix
-      $('.next_page').text('Next');
-      $('.previous_page').text('Previous');
-      // Scroll to top
-      $('html, body').animate({ scrollTop: 0 }, 0);
-    });
-  });
+  ajaxer('#pager', 'a');
 
   // Sign In Link AJAX
-  $("header nav ul").on("click", "a#sign_in", function(event) {
-    event.preventDefault();
-    var url = $(this).attr("href");
-    $.get(url, function(results) {
-      var all = $(results).filter('.container').html();
-      var page = $(results).filter('#pager').html();
-      $('.container').html(all);
-      $('#pager').html(page);
-    });
-  });
+  ajaxer("header nav ul", "a#sign_in");
 
 });
 
 
+function ajaxer(watched, link) {
+  $(watched).on("click", link, function(event) {
+    event.preventDefault();
+    var url = $(this).attr("href");
+    $.get(url, function(results) {
+      pageSwap(results);
+    });
+  });
+}
 
+function scroller() {
+  // Scroll to top
+  $('html, body').animate({ scrollTop: 0 }, 0);
+}
 
+function paginationFix() {
+  // Pagination Fix
+  $('.next_page').text('Next');
+  $('.previous_page').text('Previous');
+}
 
-
-
-
-
-
-
-
-
-
-
+function pageSwap(results) {
+  var all = $(results).filter('.container').html();
+  var page = $(results).filter('#pager').html();
+  $('.container').html(all);
+  $('#pager').html(page);
+  paginationFix();
+  scroller();
+}
