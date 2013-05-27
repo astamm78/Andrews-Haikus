@@ -46,7 +46,7 @@
           <% haiku.likes.each do |like| %>
             <% likes << User.find(like.user_id).full_name %>
           <% end %>
-          <p>Liked by: <%= likes.join(", ") %></p>
+          <p><span class="liked_by_gray">Liked by:</span> <%= likes.join(", ") %></p>
         </div>
       <% end %>
 
