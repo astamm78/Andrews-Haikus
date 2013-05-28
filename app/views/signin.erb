@@ -2,14 +2,14 @@
 
   <h2>
     Please Sign In,<br>
-    Or <a href="/platypus">create</a> an account.
+    Or <a id="signup" href="/signup">create</a> an account.
   </h2>
 
   <% if @errors %>
     <h3><%= @errors %></h3>
   <% end %>
 
-  <form name="sign_in" action="/verify" method="post">
+  <form id="submit_sign_in" name="sign_in" action="/verify" method="post">
     <input class="textbox" type="text" name="email" placeholder="Email">
     <input class="textbox" type="password" name="password" placeholder="Password">
     <button type="submit" value="login">Submit</button>

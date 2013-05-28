@@ -1,4 +1,4 @@
-get '/narwhal' do
+get '/signin' do
   erb :signin
 end
 
@@ -6,7 +6,9 @@ post '/verify' do
   @login_auth = User.authenticate(params[:email], params[:password])
   if @login_auth == true
     session[:user_id] = User.find_by_email(params[:email]).id
-    redirect to "/user/#{current_user.id}"
+    @haikus = User.find(current_user.id).haikus.paginate(:page => params[:page]).order('created_at DESC')
+    @title = "Haikus liked by #{User.find(current_user.id).full_name}"
+    erb :all
   else
     @errors = "Please log in with a valid email and password"
     erb :signin
@@ -18,7 +20,7 @@ get '/logout' do
   redirect to '/'
 end
 
-get '/platypus' do
+get '/signup' do
   if @login_auth == true
     redirect to '/'
   else
@@ -32,8 +34,8 @@ post '/create_account' do
                             :password   => params[:password])
   if @new_user.save
     session[:user_id] = @new_user.id
-    # redirect to "/author/#{@new_user.id}"
-    redirect "/"
+    @haiku = Haiku.find((1..Haiku.count).to_a.sample)
+    erb :haiku
   else
     @errors = "Full Name, a valid email and a password<br>of at least 5 characters are required"
     erb :signup

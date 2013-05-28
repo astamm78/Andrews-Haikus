@@ -28,7 +28,7 @@
             <li class="head_nav"><a href="/create">Create New Haiku</a></li>
           <% end %>
         <% else %>
-          <li class="head_nav"><a class="sign_in" href="/narwhal">Sign In</a></li>
+          <li class="head_nav"><a class="sign_in" href="/signin">Sign In</a></li>
         <% end %>
       </ul>
     </nav>
@@ -38,11 +38,13 @@
     <%= yield %>
   </div>
 
-  <% if current_user != nil %>
-    <p id="session_user">
-      You are logged in as <a href="/user/<%= current_user.id %>"><%= current_user.full_name %></a>, <a href="/logout">Log Out</a>
-    </p>
-  <% end %>
+  <div id="session">
+    <% if current_user != nil %>
+      <p id="session_user">
+        You are logged in as <a href="/user/<%= current_user.id %>"><%= current_user.full_name %></a>, <a id="logout" href="/logout">Log Out</a>
+      </p>
+    <% end %>
+  </div>
 
   <div id="pager">
     <% if @haikus %>
