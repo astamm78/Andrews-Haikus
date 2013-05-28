@@ -30,6 +30,9 @@ $(document).ready(function() {
   // Pagination Links AJAX
   ajaxer('#pager', 'a');
 
+  // User Page AJAX
+  ajaxer("#session", "a#user_page");
+
   // Sign In Link AJAX
   ajaxer("header", "a.sign_in");
   ajaxer(".container", "a.sign_in");
