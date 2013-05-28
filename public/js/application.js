@@ -19,19 +19,19 @@ $(document).ready(function() {
   closePopup('.container', 'a.close', '#liked_by');
 
   // Home Page Link AJAX
-  ajaxer("header nav", "h1 a");
+  ajaxer("header", "a#home");
 
   // Newest Haiku Link AJAX
-  ajaxer("header nav ul", "a#newest");
+  ajaxer("header", "a#newest");
 
   // List All Link AJAX
-  ajaxer("header nav ul", "a#list_all");
+  ajaxer("header", "a#list_all");
 
   // Pagination Links AJAX
   ajaxer('#pager', 'a');
 
   // Sign In Link AJAX
-  ajaxer("header nav ul", "a.sign_in");
+  ajaxer("header", "a.sign_in");
   ajaxer(".container", "a.sign_in");
 
   // Sign Up Link AJAX
