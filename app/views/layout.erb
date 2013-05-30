@@ -24,7 +24,7 @@
         <li class="head_nav"><a id="newest" href="/newest">Newest Haiku</a></li>
         <li class="head_nav"><a id="list_all" href="/all">All Haikus</a></li>
         <% if current_user %>
-          <% if current_user.id == 1 %>
+          <% if current_user.admin == true %>
             <li class="head_nav"><a href="/create">Create New Haiku</a></li>
           <% end %>
         <% else %>
