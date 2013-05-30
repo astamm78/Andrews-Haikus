@@ -29,15 +29,20 @@ get '/signup' do
 end
 
 post '/create_account' do
-  @new_user = User.create(  :full_name  => params[:full_name],
-                            :email      => params[:email],
-                            :password   => params[:password])
-  if @new_user.save
-    session[:user_id] = @new_user.id
-    @haiku = Haiku.find((1..Haiku.count).to_a.sample)
-    erb :haiku
+  if params[:password] == params[:password_verify]
+    @new_user = User.create(  :full_name  => params[:full_name],
+                              :email      => params[:email],
+                              :password   => params[:password])
+    if @new_user.save
+      session[:user_id] = @new_user.id
+      @haiku = Haiku.find((1..Haiku.count).to_a.sample)
+      erb :haiku, :locals => {:haiku => @haiku}
+    else
+      @errors = "Full Name, a valid email and a password<br>of at least 5 characters are required"
+      erb :signup
+    end
   else
-    @errors = "Full Name, a valid email and a password<br>of at least 5 characters are required"
+    @errors = "Your passwords do not match.<br>Full Name, a valid email and a password<br>of at least 5 characters are required."
     erb :signup
   end
 end
