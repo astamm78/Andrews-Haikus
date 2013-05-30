@@ -6,7 +6,7 @@
   <li><a class="comment_link" href="/haiku/<%= haiku.id %>">Comments (<%= haiku.comments.count %>)</a></li>
   <% if current_user %>
     <% if Like.where(:haiku_id => haiku.id, :user_id => current_user.id).length != 0 %>
-      <li class="green">You have already voted</li>
+      <li class="green">You liked this</li>
     <% else %>
       <li><a href="/like/<%= haiku.id %>">Like</a></li>
     <% end %>
@@ -17,6 +17,12 @@
     <li><a class="liked" href="#">Liked by</a></li>
   <% end %>
   <li><a class="perm" href="/haiku/<%= haiku.id %>" target="_blank">Permalink</a></li>
+  <li><a  href="https://twitter.com/share"
+          class="twitter-share-button"
+          data-url="http://andrewshaikus.com/haiku/<%= haiku.id %>"
+          data-counturl="http://andrewshaikus.com"
+          data-text="Andrew's Haikus: <%= haiku.line_1 %> <%= haiku.line_2 %> <%= haiku.line_3 %>"
+          data-lang="en" data-count="horizontal">Tweet</a></li>
 </ul>
 
 <div id="permalink" class="hidden">
