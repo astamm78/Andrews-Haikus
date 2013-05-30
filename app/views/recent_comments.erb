@@ -1,0 +1,15 @@
+<div class="haiku haiku_list">
+
+  <h2>Recent Comments</h2>
+
+  <% Comment.all[0..4].each do |comment| %>
+    <div class="comment_list">
+      <p><%= comment.line_1 %></p>
+      <p><%= comment.line_2 %></p>
+      <p><%= comment.line_3 %></p>
+      <p>Posted by: <%= comment.user.full_name %></p>
+      <p><a class="comment_link" href="/haiku/<%= comment.haiku_id %>">From this haiku</a></p>
+    </div>
+  <% end %>
+
+</div>

@@ -35,3 +35,7 @@ post "/create_comment/:haiku_id" do
     erb :comments, :locals => {:haiku => @haiku}
   end
 end
+
+get "/recent_comments" do
+  erb :recent_comments
+end

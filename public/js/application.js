@@ -51,15 +51,15 @@ $(document).ready(function() {
     event.preventDefault();
     var data = $(this).serialize();
     $.post("/verify", data, function(results) {
-      var header    = $(results).filter("header");
-      var pager     = $(results).filter("#pager");
-      var new_data  = $(results).filter(".container");
-      var session   = $(results).filter("#session");
+      var header    = $(results).filter("header").html();
+      var pager     = $(results).filter("#pager").html();
+      var new_data  = $(results).filter(".container").html();
+      var session   = $(results).filter("#session").html();
       $(".container").html(new_data);
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
-      $.ajax({ url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache:true});
+      tw_reload();
     });
   });
 
@@ -68,15 +68,15 @@ $(document).ready(function() {
     event.preventDefault();
     var data = $(this).serialize();
     $.post("/create_account", data, function(results) {
-      var header    = $(results).filter("header");
-      var pager     = $(results).filter("#pager");
-      var new_data  = $(results).filter(".container");
-      var session   = $(results).filter("#session");
+      var header    = $(results).filter("header").html();
+      var pager     = $(results).filter("#pager").html();
+      var new_data  = $(results).filter(".container").html();
+      var session   = $(results).filter("#session").html();
       $(".container").html(new_data);
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
-      $.ajax({ url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache:true});
+      tw_reload();
     });
   });
 
@@ -86,15 +86,15 @@ $(document).ready(function() {
     var url = $(this).attr("action");
     var data = $(this).serialize();
     $.post(url, data, function(results) {
-      var header    = $(results).filter("header");
-      var pager     = $(results).filter("#pager");
-      var new_data  = $(results).filter(".container");
-      var session   = $(results).filter("#session");
+      var header    = $(results).filter("header").html();
+      var pager     = $(results).filter("#pager").html();
+      var new_data  = $(results).filter(".container").html();
+      var session   = $(results).filter("#session").html();
       $(".container").html(new_data);
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
-      $.ajax({ url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache:true});
+      tw_reload();
     });
   });
 
@@ -136,15 +136,15 @@ function paginationFix() {
 function pageSwap(results) {
   var all = $(results).filter('.container').html();
   var page = $(results).filter('#pager').html();
-  var session   = $(results).filter("#session");
-  var header    = $(results).filter("header");
+  var session   = $(results).filter("#session").html();
+  var header    = $(results).filter("header").html();
   $('.container').html(all);
   $("header").html(header);
   $('#pager').html(page);
   $("#session").html(session);
   paginationFix();
   scroller();
-  $.ajax({ url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache:true});
+  tw_reload();
 }
 
 !function(d,s,id){
@@ -156,3 +156,11 @@ function pageSwap(results) {
     fjs.parentNode.insertBefore(js,fjs);
   }
 }(document,"script","twitter-wjs")
+
+function tw_reload()  // reload tweet button
+{
+  $('.social-tw').html('');
+  $('.social-tw').html('<a href="https://twitter.com/share" class="twitter-share-button" data-url="' + window.location.href + '">Tweet</a>');
+  // refresh the widgets
+  twttr.widgets.load();
+}

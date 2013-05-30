@@ -23,11 +23,12 @@
       <ul>
         <% if current_user %>
           <% if current_user.admin == true %>
-            <li class="head_nav"><a href="/create">Create New Haiku</a></li>
+            <li class="head_nav"><a href="/create">New Haiku</a></li>
           <% end %>
         <% else %>
           <li class="head_nav"><a class="sign_in" href="/signin">Sign In</a></li>
         <% end %>
+        <li><a id="comments" href="/recent_comments">Recent Comments</a></li>
         <li class="head_nav"><a id="newest" href="/newest">Newest Haiku</a></li>
         <li class="head_nav"><a id="list_all" href="/all">All Haikus</a></li>
       </ul>
