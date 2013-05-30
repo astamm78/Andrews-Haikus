@@ -6,7 +6,7 @@ end
 
 get '/haiku/:id' do
   @haiku = Haiku.find(params[:id])
-  erb :haiku, :locals => {:haiku => @haiku}
+  erb :comments, :locals => {:haiku => @haiku}
 end
 
 get '/like/:id' do
@@ -21,11 +21,6 @@ get '/newest' do
   erb :haiku, :locals => {:haiku => @haiku}
 end
 
-get '/comments/:haiku_id' do
-  @haiku = Haiku.find(params[:haiku_id])
-  erb :comments, :locals => {:haiku => @haiku}
-end
-
 post "/create_comment/:haiku_id" do
   @haiku = Haiku.find(params[:haiku_id])
   comment = Comment.create( :user_id    => current_user.id,
@@ -34,7 +29,7 @@ post "/create_comment/:haiku_id" do
                             :line_2     => params[:line_2],
                             :line_3     => params[:line_3])
   if comment.save
-    redirect to "/comments/#{params[:haiku_id]}"
+    redirect to "/haiku/#{params[:haiku_id]}"
   else
     @errors = "You must enter in all three lines."
     erb :comments, :locals => {:haiku => @haiku}
