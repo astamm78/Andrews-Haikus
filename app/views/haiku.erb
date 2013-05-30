@@ -1,39 +1,5 @@
 <div class="haiku">
 
-  <p class="date"><%= @haiku.created_at.strftime('%b %e, %Y') %> by <%= @haiku.author.full_name %></p>
-  <p><%= @haiku.line_1 %></p>
-  <p><%= @haiku.line_2 %></p>
-  <p><%= @haiku.line_3 %></p>
-  <ul>
-    <% if current_user %>
-      <% if Like.where(:haiku_id => @haiku.id, :user_id => current_user.id).length != 0 %>
-        <li class="green">You have already voted</li>
-      <% else %>
-        <li><a href="/like/<%= @haiku.id %>">Like</a></li>
-      <% end %>
-    <% else %>
-      <li class="green"><a class="sign_in" href="/signin">Sign In to like</a></li>
-    <% end %>
-    <% if @haiku.likes.count != 0 %>
-      <li><a class="liked" href="#">Liked by</a></li>
-    <% end %>
-    <li><a class="perm" href="/haiku/<%= @haiku.id %>" target="_blank">Permalink</a></li>
-  </ul>
-
-  <div id="permalink" class="hidden">
-    <a class="close" href="#">Close</a>
-    <input type="text" value ="http://andrewshaikus.com/haiku/<%= @haiku.id %>"></input>
-  </div>
-
-  <% if @haiku.likes.count != 0 %>
-    <div id="liked_by" class="hidden">
-      <a class="close" href="#">Close</a>
-      <% likes = [] %>
-      <% @haiku.likes.each do |like| %>
-        <% likes << User.find(like.user_id).full_name %>
-      <% end %>
-      <p><span class="liked_by_gray">Liked by:</span> <%= likes.join(", ") %></p>
-    </div>
-  <% end %>
+  <%= erb :single, :locals => {:haiku => haiku} %>
 
 </div>
