@@ -20,3 +20,7 @@ get '/newest' do
   @haiku = Haiku.order(:created_at).reverse.first
   erb :haiku, :locals => {:haiku => @haiku}
 end
+
+get '/comments/:haiku_id' do
+  erb :comments
+end
