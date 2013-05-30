@@ -18,5 +18,5 @@ end
 
 get '/newest' do
   @haiku = Haiku.order(:created_at).reverse.first
-  erb :haiku
+  erb :haiku, :locals => {:haiku => @haiku}
 end
