@@ -29,7 +29,7 @@ post "/create_comment/:haiku_id" do
                             :line_2     => params[:line_2],
                             :line_3     => params[:line_3])
   if comment.save
-    redirect to "/haiku/#{params[:haiku_id]}"
+    redirect to "/haiku/#{@haiku.id}"
   else
     @errors = "You must enter in all three lines."
     erb :comments, :locals => {:haiku => @haiku}
