@@ -59,6 +59,7 @@ $(document).ready(function() {
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
+      $.ajax({ url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache:true});
     });
   });
 
@@ -75,6 +76,7 @@ $(document).ready(function() {
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
+      $.ajax({ url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache:true});
     });
   });
 
@@ -92,6 +94,7 @@ $(document).ready(function() {
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
+      $.ajax({ url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache:true});
     });
   });
 
@@ -141,4 +144,15 @@ function pageSwap(results) {
   $("#session").html(session);
   paginationFix();
   scroller();
+  $.ajax({ url: 'http://platform.twitter.com/widgets.js', dataType: 'script', cache:true});
 }
+
+!function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0];
+  if(!d.getElementById(id))
+  {
+    js=d.createElement(s);js.id=id;
+    js.src="https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js,fjs);
+  }
+}(document,"script","twitter-wjs");
