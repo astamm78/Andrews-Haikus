@@ -273,13 +273,62 @@ p#session_user {
   font-size: 1.6em;
 }
 
-#liked_by p .liked_by_gray {
+#liked_by p.liked_by_gray {
   color: gray;
 }
 
 .hidden {
   visibility: hidden;
 }
+
+.comment_list {
+  background: white;
+  border-radius: 12px;
+  margin: 40px 0;
+  padding: 6px 0 18px;
+  width: 100%;
+}
+
+.comment_list h2 {
+  color: gray;
+  padding: 18px 0 0;
+}
+
+.comment_list h2.none {
+  position: relative;
+  top: 18px;
+}
+
+.comments #comment_sign_in {
+  font-size: 18px;
+}
+
+.comment_list ul {
+  margin: 0 0 30px;
+}
+
+.comment_list ul li {
+  color: gray;
+  display: block;
+  font-family: 'Special Elite', cursive;
+  font-size: 32px;
+  line-height: 1.4em;
+  margin: 0 auto;
+  width: 870px;
+}
+
+.comment_list ul li.comment_author {
+  color: black;
+  font-size: 14px;
+  margin: 12px 0 0;
+}
+
+
+
+
+
+
+
 
 
 

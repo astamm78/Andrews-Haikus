@@ -1,1 +1,27 @@
-COMMENTS GO HERE
+<div class="haiku comments">
+
+  <%= erb :single, :locals => {:haiku => haiku} %>
+
+  <div class="comment_list">
+    <% if haiku.comments.count == 0 %>
+      <h2 class="none">No Comments...</h2>
+    <% else %>
+      <h2>Comments:</h2>
+      <% haiku.comments.each do |comment| %>
+        <ul>
+            <li><%= comment.line_1 %></li>
+            <li><%= comment.line_2 %></li>
+            <li><%= comment.line_3 %></li>
+            <li class="comment_author">Posted by: <%= comment.user.full_name %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if current_user %>
+    <p>COMMENT FORM HERE</p>
+  <% else %>
+    <p id="comment_sign_in"><a href="/signin">Please sign in to leave a comment</a></p>
+  <% end %>
+
+</div>

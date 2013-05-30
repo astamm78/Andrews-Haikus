@@ -6,7 +6,7 @@ end
 
 get '/haiku/:id' do
   @haiku = Haiku.find(params[:id])
-  erb :haiku
+  erb :haiku, :locals => {:haiku => @haiku}
 end
 
 get '/like/:id' do
@@ -22,5 +22,6 @@ get '/newest' do
 end
 
 get '/comments/:haiku_id' do
-  erb :comments
+  @haiku = Haiku.find(params[:haiku_id])
+  erb :comments, :locals => {:haiku => @haiku}
 end
