@@ -4,6 +4,8 @@ class Haiku < ActiveRecord::Base
   has_many :likes
   has_many :users, :through => :likes
 
+  has_many :comments
+
   validates :line_1, :presence => true
   validates :line_2, :presence => true
   validates :line_3, :presence => true
