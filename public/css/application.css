@@ -285,7 +285,7 @@ p#session_user {
   background: white;
   border-radius: 12px;
   margin: 40px 0;
-  padding: 6px 0 18px;
+  padding: 18px 0 12px;
   width: 100%;
 }
 
@@ -296,7 +296,7 @@ p#session_user {
 
 .comment_list h2.none {
   position: relative;
-  top: 18px;
+  top: 10px;
 }
 
 .comments #comment_sign_in {

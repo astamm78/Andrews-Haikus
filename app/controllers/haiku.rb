@@ -25,3 +25,18 @@ get '/comments/:haiku_id' do
   @haiku = Haiku.find(params[:haiku_id])
   erb :comments, :locals => {:haiku => @haiku}
 end
+
+post "/create_comment/:haiku_id" do
+  @haiku = Haiku.find(params[:haiku_id])
+  comment = Comment.create( :user_id    => current_user.id,
+                            :haiku_id   => @haiku.id,
+                            :line_1     => params[:line_1],
+                            :line_2     => params[:line_2],
+                            :line_3     => params[:line_3])
+  if comment.save
+    redirect to "/comments/#{params[:haiku_id]}"
+  else
+    @errors = "You must enter in all three lines."
+    erb :comments, :locals => {:haiku => @haiku}
+  end
+end
