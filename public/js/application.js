@@ -21,6 +21,9 @@ $(document).ready(function() {
   // Home Page Link AJAX
   ajaxer("header", "a#home");
 
+  // Comment Page Link AJAX
+  ajaxer(".container", "a.comment_link");
+
   // Newest Haiku Link AJAX
   ajaxer("header", "a#newest");
 
@@ -64,6 +67,23 @@ $(document).ready(function() {
     event.preventDefault();
     var data = $(this).serialize();
     $.post("/create_account", data, function(results) {
+      var header    = $(results).filter("header");
+      var pager     = $(results).filter("#pager");
+      var new_data  = $(results).filter(".container");
+      var session   = $(results).filter("#session");
+      $(".container").html(new_data);
+      $("header").html(header);
+      $("#pager").html(pager);
+      $("#session").html(session);
+    });
+  });
+
+  // Create Comment Form Submit AJAX
+  $(".container").on("submit", "form#new_comment", function(event) {
+    event.preventDefault();
+    var url = $(this).attr("action");
+    var data = $(this).serialize();
+    $.post(url, data, function(results) {
       var header    = $(results).filter("header");
       var pager     = $(results).filter("#pager");
       var new_data  = $(results).filter(".container");

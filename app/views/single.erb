@@ -3,7 +3,7 @@
 <p><%= haiku.line_2 %></p>
 <p><%= haiku.line_3 %></p>
 <ul>
-  <li><a href="/haiku/<%= haiku.id %>">Comment</a></li>
+  <li><a class="comment_link" href="/haiku/<%= haiku.id %>">Comment</a></li>
   <% if current_user %>
     <% if Like.where(:haiku_id => haiku.id, :user_id => current_user.id).length != 0 %>
       <li class="green">You have already voted</li>

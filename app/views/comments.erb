@@ -28,7 +28,7 @@
         <h3><%= @errors %></h3>
       <% end %>
 
-      <form name="new_comment" action="/create_comment/<%= haiku.id %>" method="post">
+      <form id="new_comment" name="new_comment" action="/create_comment/<%= haiku.id %>" method="post">
         <input class="textbox" type="text" name="line_1" placeholder="Line One (5 syllables)">
         <input class="textbox" type="text" name="line_2" placeholder="Line Two (7 syllables)">
         <input class="textbox" type="text" name="line_3" placeholder="Line Three (5 syllables)">
