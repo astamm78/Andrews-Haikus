@@ -359,6 +359,9 @@ a.twitter_link {
   width: 88px;
 }
 
+a.twitter_link:hover {
+  box-shadow: -2px 3px 3px gray;
+}
 
 
 
