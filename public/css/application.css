@@ -245,7 +245,7 @@ p#session_user {
   left: 50%;
   margin-left: -370px;
   box-shadow: -2px 2px 5px #669999;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 #permalink a {
@@ -263,19 +263,22 @@ p#session_user {
   left: 50%;
   margin-left: -370px;
   box-shadow: -2px 2px 5px #669999;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 #liked_by a {
   color: gray;
 }
 
-#liked_by p {
+#liked_by ul li {
   font-size: 1.6em;
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  color: #669999;
 }
 
-.liked_by_gray {
-  color: gray;
+ul li.liked_by_gray {
+  color: gray !important;
 }
 
 .hidden {
