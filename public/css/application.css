@@ -274,7 +274,7 @@ p#session_user {
   font-size: 1.6em;
 }
 
-#liked_by p.liked_by_gray {
+.liked_by_gray {
   color: gray;
 }
 
