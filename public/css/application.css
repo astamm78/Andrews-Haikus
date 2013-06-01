@@ -349,7 +349,15 @@ p.comment_link_p a.comment_link {
   text-decoration: underline;
 }
 
-
+a.twitter_link {
+  background: url("../images/Twitter-Button.png");
+  display: block;
+  height: 25px;
+  position: relative;
+  text-indent: -999999px;
+  top: -7px;
+  width: 88px;
+}
 
 
 
