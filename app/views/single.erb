@@ -17,12 +17,12 @@
     <li><a class="liked" href="#">Liked by</a></li>
   <% end %>
   <li><a class="perm" href="/haiku/<%= haiku.id %>" target="_blank">Permalink</a></li>
-  <!-- <li><a  href="https://twitter.com/share"
-          class="twitter-share-button"
-          data-url="http://andrewshaikus.com/haiku/<%= haiku.id %>"
-          data-counturl="http://andrewshaikus.com/haiku/<%= haiku.id %>"
-          data-text="Andrew's Haikus: <%= haiku.line_1 %> <%= haiku.line_2 %> <%= haiku.line_3 %>"
-          data-lang="en" data-count="none">Tweet</a></li> -->
+  <li>
+    <a href="https://twitter.com/share?url=http://andrewshaikus.com/haiku/<%= haiku.id %>&text=Andrews&nbsp;Haikus:&nbsp;<%= haiku.line_1 %>&nbsp;<%= haiku.line_2 %>&nbsp;<%= haiku.line_3 %>"
+       target="_blank">
+       Tweet this haiku
+    </a>
+  </li>
 </ul>
 
 <div id="permalink" class="hidden">
