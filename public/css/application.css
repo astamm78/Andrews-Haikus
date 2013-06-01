@@ -273,7 +273,7 @@ p#session_user {
 #liked_by ul li {
   font-size: 1.6em;
   font-family: 'Special Elite', cursive;
-  line-height: 1.2em;
+  padding: 0 0 14px;
   text-align: center;
   color: #669999;
 }
