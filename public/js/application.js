@@ -1,9 +1,6 @@
 $(document).ready(function() {
 
-  // NEED SIGN IN AND CREATE ACCOUNT POST AJAX
-
   window.history.pushState("object or string", "Title", "/");
-
   paginationFix();
 
   // Permalink Popup
@@ -21,8 +18,14 @@ $(document).ready(function() {
   // Home Page Link AJAX
   ajaxer("header", "a#home");
 
+  // Like Link AJAX
+  ajaxer(".container", "a.like_link");
+
   // Comment Page Link AJAX
   ajaxer(".container", "a.comment_link");
+
+  // Recent Comments Link AJAX
+  ajaxer("header", "a#comments")
 
   // Newest Haiku Link AJAX
   ajaxer("header", "a#newest");
@@ -141,5 +144,5 @@ function pageSwap(results) {
   $("#session").html(session);
   paginationFix();
   scroller();
-  twttr.widgets.load();
+  // twttr.widgets.load();
 }
