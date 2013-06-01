@@ -59,7 +59,6 @@ $(document).ready(function() {
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
-      tw_reload();
     });
   });
 
@@ -76,7 +75,6 @@ $(document).ready(function() {
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
-      tw_reload();
     });
   });
 
@@ -94,7 +92,6 @@ $(document).ready(function() {
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
-      tw_reload();
     });
   });
 
@@ -134,8 +131,8 @@ function paginationFix() {
 }
 
 function pageSwap(results) {
-  var all = $(results).filter('.container').html();
-  var page = $(results).filter('#pager').html();
+  var all       = $(results).filter('.container').html();
+  var page      = $(results).filter('#pager').html();
   var session   = $(results).filter("#session").html();
   var header    = $(results).filter("header").html();
   $('.container').html(all);
@@ -144,23 +141,5 @@ function pageSwap(results) {
   $("#session").html(session);
   paginationFix();
   scroller();
-  tw_reload();
-}
-
-!function(d,s,id){
-  var js,fjs=d.getElementsByTagName(s)[0];
-  if(!d.getElementById(id))
-  {
-    js=d.createElement(s);js.id=id;
-    js.src="https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js,fjs);
-  }
-}(document,"script","twitter-wjs")
-
-function tw_reload()  // reload tweet button
-{
-  $('.social-tw').html('');
-  $('.social-tw').html('<a href="https://twitter.com/share" class="twitter-share-button" data-url="' + window.location.href + '">Tweet</a>');
-  // refresh the widgets
   twttr.widgets.load();
 }

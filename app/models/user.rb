@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
 
+  include BCrypt
+
   has_many :likes
   has_many :haikus, :through => :likes
 
   has_many :comments
-
-  include BCrypt
 
   validates :email, :presence => true, :format => {:with =>  /\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3}/},
             :uniqueness => true

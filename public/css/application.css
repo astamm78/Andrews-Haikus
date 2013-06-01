@@ -328,3 +328,30 @@ li iframe {
   position: relative;
   top: 3px;
 }
+
+p.comment_posted_by {
+  color: gray;
+  font-size: .7em;
+}
+
+p.comment_link_p {
+  height: 80px;
+  margin-top: -20px;
+}
+
+p.comment_link_p a.comment_link {
+  color: gray;
+  font-size: .5em;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+

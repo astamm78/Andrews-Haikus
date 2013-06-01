@@ -7,8 +7,8 @@
       <p><%= comment.line_1 %></p>
       <p><%= comment.line_2 %></p>
       <p><%= comment.line_3 %></p>
-      <p>Posted by: <%= comment.user.full_name %></p>
-      <p><a class="comment_link" href="/haiku/<%= comment.haiku_id %>">From this haiku</a></p>
+      <p class="comment_link_p"><a class="comment_link" href="/haiku/<%= comment.haiku_id %>">Posted on this haiku</a></p>
+      <p class="comment_posted_by">Posted by: <%= comment.user.full_name %></p>
     </div>
   <% end %>
 
