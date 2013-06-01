@@ -3,13 +3,22 @@
 <head>
 
   <link rel="stylesheet" href="/css/reset.css">
-
   <link rel="stylesheet" href="/css/application.css">
-
   <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+
+  <!-- GOOGLE ANALYTICS -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41363130-1', 'andrewshaikus.com');
+    ga('send', 'pageview');
+  </script>
 
   <title>Andrew's Haikus</title>
 
@@ -23,20 +32,21 @@
       <ul>
         <% if current_user %>
           <% if current_user.admin == true %>
-            <li class="head_nav"><a href="/create">New Haiku</a></li>
+            <li><a href="/create">New Haiku</a></li>
           <% end %>
         <% else %>
-          <li class="head_nav"><a class="sign_in" href="/signin">Sign In</a></li>
+          <li><a class="sign_in" href="/signin">Sign In</a></li>
         <% end %>
         <!-- <li><a id="comments" href="/recent_comments">Recent Comments</a></li> -->
-        <li class="head_nav"><a id="newest" href="/newest">Newest Haiku</a></li>
-        <li class="head_nav"><a id="list_all" href="/all">All Haikus</a></li>
+        <li><a id="newest" href="/newest">Newest Haiku</a></li>
+        <li><a id="list_all" href="/all">All Haikus</a></li>
       </ul>
     </nav>
   </header>
 
   <div class="container">
     <%= yield %>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </div>
 
   <div id="session">
