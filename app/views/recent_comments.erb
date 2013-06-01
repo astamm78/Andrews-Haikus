@@ -2,7 +2,7 @@
 
   <h2>Recent Comments</h2>
 
-  <% Comment.all[0..4].each do |comment| %>
+  <% @comments.each do |comment| %>
     <div class="comment_list">
       <p><%= comment.line_1 %></p>
       <p><%= comment.line_2 %></p>

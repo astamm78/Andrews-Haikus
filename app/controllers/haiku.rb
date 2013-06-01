@@ -37,5 +37,6 @@ post "/create_comment/:haiku_id" do
 end
 
 get "/recent_comments" do
+  @comments = Comment.order("created_at DESC").limit(5)
   erb :recent_comments
 end
