@@ -360,5 +360,5 @@ a.twitter_link {
 }
 
 a.twitter_link:hover {
-  box-shadow: -2px 3px 3px gray;
+  box-shadow: 0px 0px 30px white;
 }

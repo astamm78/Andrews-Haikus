@@ -1,7 +1,7 @@
 <p class="date"><%= haiku.created_at.strftime('%b %e, %Y') %> by <%= haiku.author.full_name %></p>
-<p><%= haiku.line_1 %></p>
-<p><%= haiku.line_2 %></p>
-<p><%= haiku.line_3 %></p>
+<p class="line_1"><%= haiku.line_1 %></p>
+<p class="line_2"><%= haiku.line_2 %></p>
+<p class="line_3"><%= haiku.line_3 %></p>
 <ul>
   <li><a class="comment_link" href="/haiku/<%= haiku.id %>">Comments (<%= haiku.comments.count %>)</a></li>
   <% if current_user %>

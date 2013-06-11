@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  window.history.pushState("object or string", "Title", "/");
+  // window.history.pushState("object or string", "Title", "/");
   paginationFix();
 
   // Permalink Popup
