@@ -84,7 +84,6 @@ $(document).ready(function() {
   // Create Comment Form Submit AJAX
   $(".container").on("submit", "form#new_comment", function(event) {
     event.preventDefault();
-    $('.processing').removeClass('hidden');
     var url = $(this).attr("action");
     var data = $(this).serialize();
     $.post(url, data, function(results) {
@@ -96,7 +95,6 @@ $(document).ready(function() {
       $("header").html(header);
       $("#pager").html(pager);
       $("#session").html(session);
-      $('.processing').addClass('hidden');
     });
   });
 
