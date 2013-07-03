@@ -1,6 +1,6 @@
 get '/all' do
   # @haikus = Haiku.joins("LEFT OUTER JOIN likes ON haikus.id = likes.haiku_id").group("haikus.id").order("likes.count DESC").paginate(:page => params[:page])
-  @haikus = Haiku.paginate(:page => params[:page], :per_page => 3)
+  @haikus = Haiku.paginate(:page => params[:page], :per_page => 3).order('created_at DESC')
   @title ="All Haikus"
   erb :all
 end
