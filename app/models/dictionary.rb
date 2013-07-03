@@ -2,6 +2,8 @@ require 'csv'
 
 class Dictionary
 
+  include Singleton
+
   attr_reader :dictionary, :file
 
   def initialize

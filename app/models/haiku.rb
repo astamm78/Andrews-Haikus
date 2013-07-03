@@ -20,7 +20,7 @@ class Haiku < ActiveRecord::Base
 
   def count_syllables(input)
     counts = input.gsub(/[\-\,\.\b\s]+|\\n/, " ").split(" ").map do |word|
-      Dictionary.new.dictionary[word.upcase.to_sym]
+      Dictionary.instance.dictionary[word.upcase.to_sym]
     end
     counts.inject(&:+)
   end
