@@ -42,6 +42,7 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 require APP_ROOT.join('config', 'newrelic')
+RACK_ENV = APP_ROOT.join('config', 'newrelic')
 
 # Load up new Dictionary instance on site initialization
 Dictionary.instance
