@@ -21,6 +21,8 @@ gem 'shotgun'
 
 gem 'bcrypt-ruby'
 
+gem 'newrelic_rpm'
+
 gem 'heroku'
 gem 'pg'
 
