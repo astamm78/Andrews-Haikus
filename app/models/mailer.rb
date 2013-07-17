@@ -1,6 +1,10 @@
 class Mailer < ActionMailer::Base
 
-  def contact(line_1, line_2, line_3, url)
+  def contact(line_1, line_2, line_3, id)
+    @line_1 = line_1
+    @line_2 = line_2
+    @line_3 = line_3
+    @id = id
     mail(
       :to      => "andrewstamm@me.com",
       :from    => "andrewstamm@me.com",

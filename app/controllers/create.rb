@@ -12,7 +12,7 @@ post '/create_haiku' do
                           :line_3   => params[:line_3],
                           :author_id  => current_user.id )
   if @new_haiku.save
-    email = Mailer.contact
+    email = Mailer.contact(params[:line_1], params[:line_2], params[:line_3], @new_haiku.id)
     email.deliver
     redirect to "/haiku/#{@new_haiku.id}"
   else
