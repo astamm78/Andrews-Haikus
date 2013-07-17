@@ -12,9 +12,4 @@ configure do
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
 
-$:.unshift File.expand_path(File.dirname(__FILE__))
-require "app"
-require 'newrelic_rpm'
-NewRelic::Agent.after_fork(:force_reconnect => true)
-
 run Sinatra::Application

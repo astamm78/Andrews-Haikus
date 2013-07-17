@@ -12,9 +12,12 @@ gem 'sinatra-contrib'
 # Use Thin for our web server
 gem 'thin'
 
-gem 'activesupport'
-gem 'activerecord'
-gem 'actionmailer'
+gem 'activesupport', '~>3.2.13'
+gem 'activerecord', '~>3.2.13'
+gem 'actionmailer', '~>3.2.13'
+gem 'rack', '~>1.4.5'
+
+gem "better_errors"
 
 gem 'rake'
 
