@@ -15,9 +15,6 @@ class Haiku < ActiveRecord::Base
   before_save :valid_haiku?
 
   def valid_haiku?
-    puts "#{count_syllables(self.line_1)}"
-    puts "#{count_syllables(self.line_2)}"
-    puts "#{count_syllables(self.line_3)}"
     count_syllables(self.line_1) == 5 && count_syllables(self.line_2) == 7 && count_syllables(self.line_3) == 5
   end
 
